@@ -86,6 +86,8 @@ class ViewerTests(unittest.TestCase):
         self.assertLessEqual(self.viewer.image.height * self.viewer.scale, height - 30)
 
     def test_resize_preserves_manual_scale_and_recomputes_fit(self):
+        # Permit an actual shrink even when a CI desktop starts at the app minimum.
+        self.root.minsize(640, 480)
         before_fit = self.viewer.scale
         self.root.geometry("960x640")
         self.root.update()
