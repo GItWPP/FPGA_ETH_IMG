@@ -24,7 +24,7 @@ jobs:
       - name: Verify project and test pictures
         run: python tools/verify_repository.py
       - name: Python self-checks
-        run: python tools/eth_image.py selftest
+        run: python tools/run_ci_checks.py
       - name: HDL layout checks
         run: python tools/check_rtl_style.py
       - name: Regenerate portable image vectors
