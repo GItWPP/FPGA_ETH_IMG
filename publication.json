@@ -1,6 +1,6 @@
 {
   "tag": "v1.7.0",
-  "source_commit": "cd77cd4f2c8425f98d2713520be0211dbf936af4",
+  "source_commit": "62e92596851c9367f9c22b67d762b28533c60b05",
   "packages": [
     {
       "name": "FPGA_ETH_IMG-ZU4EV-v1.7.0.zip",
