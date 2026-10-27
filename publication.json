@@ -1,0 +1,22 @@
+{
+  "tag": "v1.7.0",
+  "source_commit": "cd77cd4f2c8425f98d2713520be0211dbf936af4",
+  "packages": [
+    {
+      "name": "FPGA_ETH_IMG-ZU4EV-v1.7.0.zip",
+      "sha256": "948cbf4106f431b6eb13f5a1c28c13b8aca3feb398bc9e8c774ac0147338524c",
+      "bytes": 73462142
+    },
+    {
+      "name": "FPGA_ETH_IMG-ZU4EV-v1.7.0-source.zip",
+      "sha256": "877e3b371ab5e04837c5c72aa3dd17996a15f1cbed9d1e9fdff4151cbe4fef69",
+      "bytes": 4231364
+    }
+  ],
+  "bitstream_sha256": "8d3009b4296110a3fdaae5ede64b74950d9fbfa9c6871378f9298a7055a1eef6",
+  "executable_sha256": "10ed523995897e2673eabdb6c50a5dcdb270905ec6e91da4ac3163dab87775e0",
+  "tested_video_fps": 25.008573903899194,
+  "tested_frames": 731,
+  "python_tests": 123,
+  "rtl_self_checks": 20
+}
