@@ -1,0 +1,12 @@
+{
+  "status": "built",
+  "compiler": "gcc (tdm64-1) 10.3.0",
+  "flags": "-std=c11 -O3 -shared -Wall -Wextra -Werror -static-libgcc -s -lws2_32",
+  "source_sha256": "b86d43efb388b1d0b70c3c365690a475cd2cfcb4d9ac6552c1ac58eefb9e0c8a",
+  "dll_sha256": "40969753abec115f6d44dbb45382f818ffd6c46cb466b6ab78b4e02163b5b9eb",
+  "dependencies": [
+    "KERNEL32.dll",
+    "msvcrt.dll",
+    "WS2_32.dll"
+  ]
+}

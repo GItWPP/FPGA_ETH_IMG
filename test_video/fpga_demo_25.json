@@ -1,0 +1,13 @@
+{
+  "file": "fpga_demo_25.mp4",
+  "width": 1280,
+  "height": 720,
+  "fps": 25,
+  "frames": 150,
+  "source_images": [
+    "hog_validation_scene.png",
+    "test1.png",
+    "Ai-marketing.jpg"
+  ],
+  "sha256": "ed4477d611dfc34353d02624b6950d4812d1a96315dd056046d9f917b0af72dd"
+}

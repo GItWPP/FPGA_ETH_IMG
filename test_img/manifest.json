@@ -1,0 +1,8 @@
+{
+  "groups": {
+    "band": ["1.png", "2.png", "3.png", "4.png"],
+    "hog": ["hog_validation_scene.png", "hog_val.png", "test1.png", "test.png", "Ai-marketing.jpg"],
+    "image": ["1920x1080_fpga_copy.png", "test1.png", "test.png", "Ai-marketing.jpg"]
+  },
+  "notes": "All application test pictures live in this directory. 1.png is the unchanged image previously called 5.png. Synthetic algorithm/edge/fault stimuli are generated during tests."
+}

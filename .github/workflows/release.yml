@@ -1,0 +1,49 @@
+name: Publish tested release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tested version tag
+        required: true
+        default: v1.7.0
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+          persist-credentials: false
+      - name: Resolve checked-out release
+        env:
+          INPUT_TAG: ${{ inputs.tag }}
+        run: |
+          python3 - <<'PY'
+          import os,re,subprocess
+          tag=os.environ.get('INPUT_TAG') or os.environ['GITHUB_REF_NAME']
+          assert re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+',tag), 'Invalid release tag'
+          commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          with open(os.environ['GITHUB_ENV'],'a',encoding='utf-8') as out:
+              out.write(f'RELEASE_TAG={tag}\nRELEASE_COMMIT={commit}\n')
+          PY
+      - name: Checkout immutable release inputs
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: release-assets/${{ env.RELEASE_TAG }}
+          path: release-input
+          persist-credentials: false
+      - name: Verify and publish exact tested packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/publish_github_release.py --assets-dir release-input --tag "$RELEASE_TAG" --commit "$RELEASE_COMMIT"

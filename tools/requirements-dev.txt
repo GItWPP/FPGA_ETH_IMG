@@ -1,0 +1,3 @@
+-r requirements.txt
+-r requirements-video.txt
+-r requirements-training.txt

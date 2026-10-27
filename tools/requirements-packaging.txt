@@ -1,0 +1,5 @@
+PyInstaller==6.22.3
+pyinstaller-hooks-contrib==2026.9
+pyserial==3.5
+Pillow==13.0.0
+-r requirements-video.txt
